@@ -30,9 +30,7 @@
           <ul class="nav navbar-nav menu col-md-12 padding--lr0 ">
           @foreach( $nav as $menu)
             <li><a href="{{url('/')}}/{{$menu->url}}">{{ $menu -> name }}</a>
-							@if($menu->sub_menu->count())
-									{!! view('admin.partial.sub_menu', ['menus' => $menu->sub_menu]) !!}
-							@endif
+						
 						</li>
           @endforeach
           </ul>

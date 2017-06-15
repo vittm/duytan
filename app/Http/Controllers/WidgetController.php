@@ -40,6 +40,16 @@
 		public function addmenu(Request $request){
 			$input = $request->all();
 			$add = new Menues;
+			if($request->hasFile('images_slide')){
+					$file = $input['images_slide'];
+					$filename = $file->getClientOriginalName();
+					$file->move(public_path().'/img/', $filename);
+			}else{
+					$filename=" ";
+			}
+			$add->img = $filename;
+			$add->action = $input['hide'];
+			$add->content = $input['content'];
 			$add->sub_menu = $input['sub_menu'];
 			$add->slug = $input['post_symbol'];
 			$add->name = $input['post_title'];
@@ -63,11 +73,21 @@
 		public function editingmenu(Request $request){
 			$input = $request->all();
 			$id = $input['id-hidden'] ;
+			if($request->hasFile('images_slide')){
+							$file = $input['images_slide'];
+							$filename = $file->getClientOriginalName();
+							$file->move(public_path().'/img/', $filename);
+					}else{
+							$filename= $input['images_slide_hidden'];
+					}
 			$array= ([
 	        	'name' => $input['post_title'],
 						'sub_menu' => $input['sub_menu'],
 	            'slug'=> $input['post_symbol'],
-	            'url'=> $input['post_symbol']
+	            'url'=> $input['post_symbol'],
+							'img' =>$filename,
+							'content' => $input['post_title'],
+							'action' => $input['hide']
 	        ]);
             DB::table('menues')->where('id', $id)->update(
  				$array

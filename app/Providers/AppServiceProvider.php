@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $menu= DB::table('menues')->get();
+        $menu= DB::table('menues')->where('action','==',0)->get();
         $text= DB::table('texts')->get();
         $logo = DB::table('logos')->where('id','=','1')->get();
         $item = DB::table('items')->get();

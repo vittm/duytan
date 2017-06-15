@@ -39,69 +39,15 @@
 <div class="w3-agileitsline"></div>
 <!-- Owl-Carousel -->
     <div id="owl-demo" class="owl-carousel text-center">
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="images/1.jpg" alt="Veg Mores">
+      @foreach($service as $value)
+      <a class="item g1 popup-with-zoom-anim" href="{{$value->slug}}">
+        <img class="lazyOwl" src="{{ URL::to('img')}}/{{$value->img}}" alt="{{$value->slug}}">
         <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
+          <h4>{{$value->name}}</h4>
+          <span>{{$value->content}}</span>
         </div>
       </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
-      <a class="item g1 popup-with-zoom-anim" href="#small-dialog">
-        <img class="lazyOwl" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt="Veg Mores">
-        <div class="agile-caption">
-          <h4>Duis nec congue</h4>
-          <span>Neque porro quisquam est qui dolorem </span>
-        </div>
-      </a>
+      @endforeach
     </div>
     <!-- //Owl-Carousel -->
     <h4 class="title-top"> Dự Án </h4>
@@ -109,15 +55,17 @@
     <h4 class="text-center"> Chúng tôi tự hào giới thiệu các công trình tiêu biểu </h4>
     <br>
     <div class="col-md-12">
+      @foreach($project as $value)
       <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card">
-              <h4 class="card-title">Tawshif Ahsan Khan</h4>
-              <img class="card-img-top" width="100%" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+              <h4 class="card-title">{{$value->name}}</h4>
+              <img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{$value->img}}">
               <p class="card-block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
+                  {{$value->content}}
               </p>
           </div>
       </div>
+      @endforeach
     </div>
     <h4 class="title-top"> Kinh Doanh </h4>
     <div class="w3-agileitsline"></div>
@@ -128,42 +76,14 @@
   <div class="mis-stage w3_agileits_welcome_grids">
     <!-- The element to select and apply miSlider to - the class is optional -->
     <ol class="mis-slider">
+      @foreach($business as $value)
       <li class="mis-slide">
         <figure>
-          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt=" " class="img-responsive" />
-          <figcaption>Strawberry</figcaption>
+          <img src="{{ URL::to('img')}}/{{$value->img}}" alt=" " class="img-responsive" />
+          <figcaption>{{$value->name}}</figcaption>
         </figure>
       </li>
-      <li class="mis-slide">
-        <figure>
-          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt=" " class="img-responsive" />
-          <figcaption>Orange</figcaption>
-        </figure>
-      </li>
-      <li class="mis-slide">
-        <figure>
-          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt=" " class="img-responsive" />
-          <figcaption>Pomegranates</figcaption>
-        </figure>
-      </li>
-      <li class="mis-slide">
-        <figure>
-          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt=" " class="img-responsive" />
-          <figcaption>Lemon</figcaption>
-        </figure>
-      </li>
-      <li class="mis-slide">
-        <figure>
-          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt=" " class="img-responsive" />
-          <figcaption>Kiwi Fruits</figcaption>
-        </figure>
-      </li>
-      <li class="mis-slide">
-        <figure>
-          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" alt=" " class="img-responsive" />
-          <figcaption>Apples</figcaption>
-        </figure>
-      </li>
+      @endforeach
     </ol>
   </div>
 </div>
@@ -218,9 +138,18 @@
       </div>
   </div>
 </div>
+
 <h4 class="title-top"> Đối Tác </h4>
 <div class="w3-agileitsline"></div>
-
+<div class="container">
+@foreach($partner as $key => $value)
+  <div class="col-md-2">
+    <a href="{{$value->url}}"><img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{ $value->img }}"></a>
+  </div>
+@endforeach
+</div>
+<br>
+<br>
 <div class="contact"></div>
         <h4 class="top30">{{ App\Texts::printText(16) }}</h4>
 
