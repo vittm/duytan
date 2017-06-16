@@ -25,61 +25,19 @@
                                                                 </label>
                                                                 <input id="post_title" type="text" class="form-control" name="post_title" placeholder="Tên bài viết" onkeyup= "locdau('post_title','post_symbol') ">
                                                             </div>
-                                                            <div class="col-md-6 pd0">
-                                                                <label class="caption">
-                                                                Giá
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="price" >
-                                                            </div>
+                                                            
                                                              <div class="col-md-6 top15">
                                                                 <label class="caption">
                                                                         Địa chỉ
                                                                 </label>
                                                                 <input id="" type="text" class="form-control" name="address" >
                                                             </div>
-                                                            <div class="col-md-6 pd0 top15">
-                                                                <label class="caption">
-                                                                Phong tắm
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="shower" >
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Phòng ngủ
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="room" >
-                                                            </div>
-                                                            <div class="col-md-6 pd0 top15">
-                                                                <label class="caption">
-                                                                Nội thất
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="furniture" >
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Loại địa ốc
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="type" >
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Diện tích
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="area" >
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Mã sản phẩm
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="idroom" >
-                                                            </div>
-
                                                              <div class="col-md-6 top15">
                                                                 <label class="caption">
                                                                 Mô tả ngắn
                                                                 </label>
                                                                 <textarea class="form-control" name="summary">
-                                                                    
+
                                                                 </textarea>
                                                                <input id="post_symbol" type="hidden" class="form-control" name="post_symbol" value="">
 
@@ -138,4 +96,3 @@
                                 </main>
 
 @stop
-

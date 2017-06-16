@@ -1,7 +1,7 @@
 @extends('layout.website')
 
 @section('content')
-
+<div class="container">
 @if($detail[0]->catelogy == 'tuyen-dung')
 @foreach($detail as $value)
         <h4 class="bt13 title ">{{ $value -> name }}</h4>
@@ -18,12 +18,12 @@
 	      @foreach($detail as $key => $value)
 	      	<?php $hi = array(json_decode($value->images,JSON_BIGINT_AS_STRING)) ?>
 	      	@foreach( $hi[0] as $key => $img)
-		        <li data-slidizle-slide-id="slide{{$key + 1}}" style="background-image:url('{{ url('laravel/public/img/')}}/{{ $img }}')">
+		        <li data-slidizle-slide-id="slide{{$key + 1}}" style="background-image:url('{{ URL::to('img')}}/{{ $img }}')">
 		        </li>
 	        @endforeach
 	      @endforeach
 	      </ul>
-	      
+
 	      <div class="slider-next" data-slidizle-next>
 	        <i class="fa fa-arrow-right"></i>
 	      </div>
@@ -37,7 +37,7 @@
 	        @foreach($detail as $key => $value)
 	        <?php $hi = array(json_decode($value->images,JSON_BIGINT_AS_STRING)) ?>
 	        @foreach( $hi[0] as $key => $img)
-		        <li class="slider-navigation-item" data-slidizle-slide-id="slide{{$key + 1}}" style="background-image:url('{{ url('laravel/public/img/')}}/{{ $img }}')">
+		        <li class="slider-navigation-item" data-slidizle-slide-id="slide{{$key + 1}}" style="background-image:url{{ URL::to('img')}}/ url('laravel/public/img/')}}/{{ $img }}')">
 		        </li>
 	        @endforeach
 	        @endforeach
@@ -46,47 +46,14 @@
 	      <div class="slidizle-loading"> </div>
 	    </section>
 	    </div>
-	<div class="col-md-12 group-title">
-		<img src="{{ url('laravel/public/img/')}}/cityscape.png" >
-		<p>Cấu trúc diện tích</p>
-	</div>
-
-	<div class="col-md-12">
-		<div class="col-md-6">
-			<p> » Giá: <strong> {{ $value->price }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Địa chỉ: <strong> {{ $value->address }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Phòng tắm: <strong> {{ $value->shower }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Nội thất: <strong> {{ $value->furniture }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Loại địa ốc: <strong> {{ $value->type }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Diện tích: <strong> {{ $value->area }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Phòng ngủ: <strong> {{ $value->room }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Mã sản phẩm : <strong> {{ $value->idroom }} </strong></p>
-		</div>
-		<div class="col-md-6">
-			<p> » Video: <strong> Đang cập nhập </strong></p>
-		</div>
-	</div>
 
 	<div class="col-md-12 group-title">
-		<img src="{{ url('laravel/public/img/')}}/cityscape.png" >
+		<img src="{{ URL::to('img')}}/cityscape.png" >
 		<p>Nội dung mô tả</p>
 	</div>
 	<div class="col-md-12">
 	 {!! $value->content !!}
 	</div>
 @endif
+</div>
 @stop

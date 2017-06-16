@@ -50,25 +50,27 @@
       @endforeach
     </div>
     <!-- //Owl-Carousel -->
+    <div class="col-md-12">
     <h4 class="title-top"> Dự Án </h4>
     <div class="w3-agileitsline"></div>
     <h4 class="text-center"> Chúng tôi tự hào giới thiệu các công trình tiêu biểu </h4>
     <br>
-    <div class="col-md-12">
       @foreach($project as $value)
       <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card">
-              <h4 class="card-title">{{$value->name}}</h4>
+              <h4 class="card-title text-center">{{$value->name}}</h4>
               <img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{$value->img}}">
-              <p class="card-block">
+              <p class="card-block top15">
                   {{$value->content}}
               </p>
           </div>
       </div>
       @endforeach
     </div>
-    <h4 class="title-top"> Kinh Doanh </h4>
-    <div class="w3-agileitsline"></div>
+
+<div class="col-md-12">
+<h4 class="title-top"> Kinh Doanh </h4>
+<div class="w3-agileitsline"></div>
 
 <!-- welcome -->
 <div class="welcome">
@@ -80,99 +82,102 @@
       <li class="mis-slide">
         <figure>
           <img src="{{ URL::to('img')}}/{{$value->img}}" alt=" " class="img-responsive" />
-          <figcaption>{{$value->name}}</figcaption>
+          <figcaption class="top15">{{$value->name}}</figcaption>
         </figure>
       </li>
       @endforeach
     </ol>
   </div>
 </div>
+</div>
 <!-- //welcome -->
-
+<div class="col-md-12 pd0 top30">
 <h4 class="title-top"> Tin tức </h4>
 <div class="w3-agileitsline"></div>
-<div class="col-md-6">
-  <div class="col-md-12">
+<div class="col-md-6 top30">
+  @foreach ($news as $value)
+  <a class="footer-news" href="{{ URL::to('chi-tiet')}}-{{$value->slug}}" class="col-md-12">
       <div class="card">
-          <h4 class="card-title">Tawshif Ahsan Khan</h4>
-          <img class="card-img-top" width="100%" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+          <?php $hi = array(json_decode($value->images,JSON_BIGINT_AS_STRING)) ?>
+          <img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{ $hi[0][0] }}">
+          <h4 class="card-title">{{$value->name}}</h4>
           <p class="card-block">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
+              {{$value->summary}}
           </p>
       </div>
-  </div>
+  </a>
+  @endforeach
 </div>
 
 <div class="col-md-6">
-  <div class="col-md-12">
+    @foreach ($news2 as $value)
+  <a href="{{ URL::to('chi-tiet')}}-{{$value->slug}}" class="col-md-12 top15">
       <div class="col-md-6">
-        <img class="card-img-top" width="100%" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+        <?php $hi = array(json_decode($value->images,JSON_BIGINT_AS_STRING)) ?>
+        <img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{ $hi[0][0] }}">
       </div>
       <div class="col-md-6">
-          <h4 class="card-title">Tawshif Ahsan Khan</h4>
+          <h4 class="card-title">{{$value->name}}</h4>
           <p class="card-block">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
+              {{$value->summary}}
           </p>
       </div>
-  </div>
-  <div class="col-md-12">
-      <div class="col-md-6">
-        <img class="card-img-top" width="100%" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
-      </div>
-      <div class="col-md-6">
-          <h4 class="card-title">Tawshif Ahsan Khan</h4>
-          <p class="card-block">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
-          </p>
-      </div>
-  </div>
-  <div class="col-md-12">
-      <div class="col-md-6">
-        <img class="card-img-top" width="100%" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
-      </div>
-      <div class="col-md-6">
-          <h4 class="card-title">Tawshif Ahsan Khan</h4>
-          <p class="card-block">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
-          </p>
-      </div>
-  </div>
+  </a>
+  @endforeach
 </div>
-
-<h4 class="title-top"> Đối Tác </h4>
-<div class="w3-agileitsline"></div>
-<div class="container">
-@foreach($partner as $key => $value)
-  <div class="col-md-2">
-    <a href="{{$value->url}}"><img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{ $value->img }}"></a>
+</div>
+<div class="col-md-12">
+  <h4 class="title-top top30"> Đối Tác </h4>
+  <div class="w3-agileitsline"></div>
+  <div class="container top30 clb">
+  @foreach($partner as $key => $value)
+    <div class="col-md-2">
+      <a href="{{$value->url}}"><img class="card-img-top" width="100%" src="{{ URL::to('img')}}/{{ $value->img }}"></a>
+    </div>
+  @endforeach
   </div>
-@endforeach
 </div>
 <br>
 <br>
-<div class="contact"></div>
-        <h4 class="top30">{{ App\Texts::printText(16) }}</h4>
+<div class="col-md-12 pd0 top30" style="background:#2f2f2f;">
+  <div class="container pd0" style="background:#2f2f2f;"> <h4 class="title-top">Liên Hệ </h4>
+  <div class="w3-agileitsline"></div>
+  <div class="contact"></div>
+              <div class="col-md-6 padding--lr0 top15">
+                  <h4 class="wel">{{ App\Texts::printText(16) }}</h4>
+                  <p class="wel">{{ App\Texts::printText(17) }}<br>
+                  {{ App\Texts::printText(18) }}<br></p>
+                  <span class="wel">Email: </span> <a class="wel" href="tell:{{ App\Texts::printText(19) }}">{{ App\Texts::printText(19) }}</a><br>
+                  <span class="wel">Tel: </span> <a class="wel" href="tell:{{ App\Texts::printText(20) }}">{{ App\Texts::printText(20) }}</a><br>
+                  {{ App\Texts::printText(21) }}<br>
+              </div>
+              <div class="col-md-6 pl0">
+                <h4 class="top15 wel">Tin Nhắn</h4>
+                 <form autocomplete="on" action="{{ url('contact-submit') }}" enctype="multipart/form-data"  method="POST" onsubmit="" name="form_addproduct">
+                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="text" name="name" class="input-contact form-control" placeholder="Họ và Tên">
+                  <input type="text" name="mail" class="input-contact form-control" placeholder="Email">
+                  <input type="text" name="subject" class="input-contact form-control" placeholder="Tiêu đề">
+                  <textarea class="content-contact form-control" placeholder="Nội dung" name="content"></textarea>
+                  <button class="sent-contact top15">Gửi</button>
+                  </form>
+              </div>
+              <div class="col-md-6">
 
-        <div class="col-md-12 top15 padding--lr0">
-            <div class="col-md-6 padding--lr0 top15">
-                {{ App\Texts::printText(17) }}<br>
-                {{ App\Texts::printText(18) }}<br>
-                Email: <a style="color:#000000" href="tell:{{ App\Texts::printText(19) }}">{{ App\Texts::printText(19) }}</a><br>
-                Tel: <a style="color:#000000" href="tell:{{ App\Texts::printText(20) }}">{{ App\Texts::printText(20) }}</a><br>
-                {{ App\Texts::printText(21) }}<br>
-            </div>
-            <div class="col-md-6 pl0">
-               <form autocomplete="on" action="{{ url('contact-submit') }}" enctype="multipart/form-data"  method="POST" onsubmit="" name="form_addproduct">
-                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="text" name="name" class="input-contact" placeholder="Name">
-                <input type="text" name="mail" class="input-contact" placeholder="Email">
-                <input type="text" name="subject" class="input-contact" placeholder="Subject">
-                <textarea class="content-contact" placeholder="Content" name="content"></textarea>
-                <button class="sent-contact">Sent</button>
-                </form>
-            </div>
-            <div class="col-md-6">
+              </div>
 
-            </div>
-        </div>
+  </div>
+</div>
+            <div class="col-md-12 pd0 top30">
+        			<!-- END : FOOTER MENU-->
+        				 <section class="footer-map">
+        					 <div id="footer-map"></div>
+        					 <div class="box-info">
+        						 <h2 class="ttl">CÔNG TY DUY TÂN </h2>
+        						 <h3 class="add">Số 88 Đường số 3, Khu dân cư Vĩnh Lộc, Phường Bình Hưng Hòa B, Quận Bình Tân, Thành phố Hồ Chí Minh</h3><a href="tel:0908884868" class="map-tel"> <i class="ico-phone"></i>086 6832 446</a>
+        					 </div>
+        				 </section>
+        				 <!-- END : FOOTER MAP-->
+
+
 @stop

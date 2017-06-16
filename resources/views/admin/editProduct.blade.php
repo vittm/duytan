@@ -24,53 +24,12 @@
                                                                 </label>
                                                                 <input id="post_title" type="text" class="form-control" name="post_title" placeholder="Tên bài viết" onkeyup= "locdau('post_title','post_symbol') " value="{{ $products[0]->name }}">
                                                             </div>
-                                                            <div class="col-md-6 pd0">
-                                                                <label class="caption">
-                                                                Giá
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="price"  value="{{ $products[0]->price }}">
-                                                            </div>
+
                                                              <div class="col-md-6 top15">
                                                                 <label class="caption">
                                                                         Địa chỉ
                                                                 </label>
                                                                 <input id="" type="text" class="form-control" name="address"  value="{{ $products[0]->address }}">
-                                                            </div>
-                                                            <div class="col-md-6 pd0 top15">
-                                                                <label class="caption">
-                                                                Phong tắm
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="shower"  value="{{ $products[0]->shower }}">
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Phòng ngủ
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="room"  value="{{ $products[0]->room }}">
-                                                            </div>
-                                                            <div class="col-md-6 pd0 top15">
-                                                                <label class="caption">
-                                                                Nội thất
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="furniture"  value="{{ $products[0]->furniture }}">
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Loại địa ốc
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="type"  value="{{ $products[0]->type }}">
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Diện tích
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="area"  value="{{ $products[0]->area }}">
-                                                            </div>
-                                                            <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                Mã sản phẩm
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="idroom"  value="{{ $products[0]->idroom }}">
                                                             </div>
                                                              <div class="col-md-6 top15">
                                                                 <label class="caption">
@@ -114,7 +73,7 @@
                                                             @else
                                                                 @foreach($list[0] as $key => $value)
                                                                 <div class="group-img" >
-                                                                    <img src="{{ url('laravel/public/img/')}}/{{$value}}" height="150">
+                                                                    <img src="{{ URL::to('img')}}/{{$value}}" height="150">
                                                                     <a href="#" class="delete-img" id="{{ $key }}"><i class="fa fa-times" aria-hidden="true"> Delete picture</i></a>
                                                                     <br>
                                                                     <br>
@@ -151,4 +110,3 @@
                                 </main>
 
 @stop
-

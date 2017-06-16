@@ -1,7 +1,7 @@
 <?php
 	namespace App\Http\Controllers;
 	/**
-	* 
+	*
 	*/
 	use DB;
 	use App\Products;
@@ -30,14 +30,7 @@
 					}else{
 						$names= " ";
 					}
-			$add->price= $input['price'];
-			$add->address = $input['address'];
-			$add->shower = $input['shower'];
-			$add->room = $input['room'];
-			$add->furniture = $input['furniture'];
-			$add->type = $input['type'];
-			$add->area = $input['area'];
-			$add->idroom = $input['idroom'];
+
 
 			$add->slug = $input['post_symbol'];
 			$add->summary = $input['summary'];
@@ -59,7 +52,7 @@
 			$id=$input['id_hidden'];
 			$names = [];
 			if ($request->hasFile('images')) {
-						
+
 					    $files = $request->file('images');
 					    foreach($files as $file){
 					       	$names[] = $file->getClientOriginalName();
@@ -67,9 +60,9 @@
 					    	$file->move(public_path().'/img/', $name);
 					    }
 					}else{
-						
+
 							$names= $input['hidden-img'];
-						
+
 					}
 			 			$array= ([
 				        	'name' => $input['post_title'],
@@ -77,19 +70,11 @@
 				            'summary'=> $input['summary'],
 				            'content'=> $input['post_cont'],
 				           	'images' => json_encode($names),
-				           	'catelogy' => $input['category'],
-				           	'price'=> $input['price'],
-							'address' => $input['address'],
-							'shower' => $input['shower'],
-							'room' => $input['room'],
-							'furniture' => $input['furniture'],
-							'type' => $input['type'],
-							'area' => $input['area'],
-							'idroom' => $input['idroom'],
+				           	'catelogy' => $input['category']
 				        ]);
 			            DB::table('products')->where('id', $id)->update(
 	         				$array
-	         			);           
+	         			);
 			return redirect('/admin/listings');
 		}
 		public function adminlistings(){

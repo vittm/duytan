@@ -50,14 +50,14 @@
     -->
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="{{ url::to('/admin/home') }}" class="simple-text">
                     Admin
                 </a>
             </div>
 
             <ul class="nav">
                 <li class="active">
-                    <a href="/home">
+                    <a href="{{ url::to('/admin/home') }}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
@@ -65,7 +65,7 @@
                 <li>
                     <a href="{{ url::to('/admin/listings') }}">
                         <i class="pe-7s-note2"></i>
-                        <p>Listings Project</p>
+                        <p>Danh sách bài viết</p>
                     </a>
                 </li>
                 <li>
@@ -77,7 +77,7 @@
                 <li>
                     <a href="{{ url::to('/admin/menu') }}">
                         <i class="pe-7s-science"></i>
-                        <p>Chỉnh sửa Menu</p>
+                        <p>Chỉnh sửa Category</p>
                     </a>
                 </li>
                 <li>
@@ -234,7 +234,7 @@
             str= str.replace(/-+-/g,"-"); //thay thế 2- thành 1-
             str= str.replace(/^\-+|\-+$/g,"");//cắt bỏ ký tự - ở đầu và cuối chuỗi
         document.getElementById(convert).value= str ;
-        }  
+        }
 	</script>
 
 </html>

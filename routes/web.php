@@ -29,8 +29,8 @@ Route::get('/admin/show-edit-menu-{id}', 'WidgetController@editmenu');
 Route::get('/admin/delete-menu-{id}', 'WidgetController@destroymenu');
 
 Route::get('/admin/about', 'WidgetController@admin_about');
-Route::get('/about', 'WidgetController@about');
-Route::get('/contact', function () {
+Route::get('/gioi-thieu', 'WidgetController@about');
+Route::get('/lien-he', function () {
     return View('contact');
 });
 Auth::routes();

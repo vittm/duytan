@@ -13,11 +13,38 @@
 </head>
 <body>
 <header>
-<div class="container padding--lr0">
+	<div class="col-md-12 pd0" style="background: #085da1;">
+		<div class="container" style="background: #085da1;">
+		<p class="wel" style="margin-bottom:0;font-size: 13px;padding:5px;">Số 88 Đường số 3, Khu dân cư Vĩnh Lộc, Phường Bình Hưng Hòa B, Quận Bình Tân, Thành phố Hồ Chí Minh</p>
+	</div>
+	</div>
+<div class="padding--lr0">
   <br>
-   <a class="col-md-12 logo" href="#"><img src="{{ URL::to('img/slide') }}/{{ $logo[0]->logo }}"></a>
-   <nav class="navbar navbar-default">
-      <div class="container padding--lr0">
+	<div class="col-md-12 pd0" style="background:#3f51b5">
+		<div class="container" style="background:#3f51b5">
+   <div class="col-md-2">
+		 <a class="col-md-12 logo" href="#"><img src="{{ URL::to('img/slide') }}/{{ $logo[0]->logo }}" width="200"></a>
+	 </div>
+	 <div class="col-md-8 text-center">
+		 	<h4 class="wel top15">CÔNG TY CỔ PHẦN TƯ VẤN XÂY DỰNG THƯƠNG MẠI</h4>
+			<h1 class="wel">DUY TÂN</h1>
+	 </div>
+	 <div class="col-md-2">
+		 <h4 class="wel  top30 text-center"> 012234667534 </h4>
+		 <a class="wel text-center" href="{{ App\Texts::printText(2) }}">
+	 			<img id="LnkBr1image1gb0imageimage" alt="" src="{{ URL::to('img') }}/facebook-black-social-button-circle.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
+	 	</a>
+		<a class="wel" href="{{ App\Texts::printText(4) }}">
+			 <img id="LnkBr1image1gb0imageimage" alt="" src="{{ URL::to('img') }}/twitter-social-logotype.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
+	 </a>
+	 <a class="wel" href="{{ App\Texts::printText(3) }}">
+			<img id="LnkBr1image1gb0imageimage" alt="" src="{{ URL::to('img') }}/gmail.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
+	</a>
+	 </div>
+ </div>
+ </div>
+   <nav class="container navbar navbar-default clb">
+      <div class="padding--lr0 clb">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -26,11 +53,11 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+        <div id="navbar" class="navbar-collapse collapse clb	" aria-expanded="false" >
           <ul class="nav navbar-nav menu col-md-12 padding--lr0 ">
           @foreach( $nav as $menu)
             <li><a href="{{url('/')}}/{{$menu->url}}">{{ $menu -> name }}</a>
-						
+
 						</li>
           @endforeach
           </ul>
@@ -41,41 +68,26 @@
 </header>
 
 <main>
-  <div class="fullscreen-bg">
-    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
-        <source src="media/background.mp4" type="video/mp4">
-    </video>
-  </div>
-	<div class="container main ">
+	<div class="main ">
     	@yield('content')
     </div>
 </main>
-
-<footer >
-    <div class="container">
-			<!-- END : FOOTER MENU-->
-				 <section class="footer-map">
-					 <div id="footer-map"></div>
-					 <div class="box-info">
-						 <h2 class="ttl">CỬA HÀNG MUA HÀNG HIỆU </h2>
-						 <h3 class="add">81 TRẦN QUANG KHẢI, P. TÂN ĐỊNH, Q.1</h3><a href="tel:0908884868" class="map-tel"> <i class="ico-phone"></i>0908 884 868</a>
-					 </div>
-				 </section>
-				 <!-- END : FOOTER MAP-->
-    <div class="top30"></div>
-    <a href="http://facebook.com/weland.vn">
-    <img id="LnkBr1image1gb0imageimage" alt="" src="https://static.wixstatic.com/media/ed86bdfa6aecf88649d305e11d76ac33.wix_mp/v1/fill/w_38,h_38,al_c,q_80,usm_0.66_1.00_0.01/ed86bdfa6aecf88649d305e11d76ac33.wix_mp" style="width:19px;height:19px;object-fit:cover;float:right;margin-bottom:15px;">
-    </a>
-    <p class="col-md-12 padding--lr0 bt1 pd15 text-right">{{ App\Texts::printText(1) }}</p>
-    </div>
-</footer>
+<div class="col-md-12">
+	<div class="top30"></div>
+	<a href="http://facebook.com/weland.vn">
+	<img id="LnkBr1image1gb0imageimage" alt="" src="https://static.wixstatic.com/media/ed86bdfa6aecf88649d305e11d76ac33.wix_mp/v1/fill/w_38,h_38,al_c,q_80,usm_0.66_1.00_0.01/ed86bdfa6aecf88649d305e11d76ac33.wix_mp" style="width:19px;height:19px;object-fit:cover;float:right;margin-bottom:15px;">
+	</a>
+	<p class="col-md-12 padding--lr0 bt1 pd15 text-right">{{ App\Texts::printText(1) }}</p>
+	</div>
+</div>
 <script type="text/javascript" src="js/jquery-1.10.2.js"></script> <!-- Link thư viện jquery -->
 <script type="text/javascript" src="js/jquery.slidizle.js"></script> <!-- Link thư viện jquery -->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjrIAmsAiOUiDaImMJxtWlmlvhKMTbAIU&amp;libraries=geometry,places&amp;ext=.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjrIAmsAiOUiDaImMJxtWlmlvhKMTbAIU&amp;libraries=geometry,places&amp;ext=.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>   <!--- Link jquery tự viết-->
 <script type="text/javascript" src="js/bootstrap.js"></script>   <!--- Link jquery tự viết-->
 <!-- mislider -->
 <script src="js/mislider.js" type="text/javascript"></script>
+
 <!-- Owl-Carousel-JavaScript -->
 	<script src="js/owl.carousel.js"></script>
 	<script>
