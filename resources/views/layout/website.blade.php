@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<title>Welands</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">  <!-- Link css tự style -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> <!-- link css font-face -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.css"> <!-- link css font-face -->
+	<link rel="stylesheet" type="text/css" href="{{ url('css/styles.css')}}">  <!-- Link css tự style -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css')}}"> <!-- link css font-face -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css')}}"> <!-- link css font-face -->
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="{{ URL::to('img')}}/{{ $itemhome['2']->img }}" type="image/png">
+  <link rel="icon" href="{{ asset('img')}}/{{ $itemhome['2']->img }}" type="image/png">
 </head>
 <body>
 <header>
@@ -23,7 +23,7 @@
 	<div class="col-md-12 pd0" style="background:#3f51b5">
 		<div class="container" style="background:#3f51b5">
    <div class="col-md-2">
-		 <a class="col-md-12 logo" href="#"><img src="{{ URL::to('img/slide') }}/{{ $logo[0]->logo }}" width="200"></a>
+		 <a class="col-md-12 logo" href="#"><img src="{{ asset('img/slide') }}/{{ $logo[0]->logo }}" width="200"></a>
 	 </div>
 	 <div class="col-md-8 text-center">
 		 	<h4 class="wel top15">CÔNG TY CỔ PHẦN TƯ VẤN XÂY DỰNG THƯƠNG MẠI</h4>
@@ -32,13 +32,13 @@
 	 <div class="col-md-2">
 		 <h4 class="wel  top30 text-center"> 012234667534 </h4>
 		 <a class="wel text-center" href="{{ App\Texts::printText(2) }}">
-	 			<img id="LnkBr1image1gb0imageimage" alt="" src="{{ URL::to('img') }}/facebook-black-social-button-circle.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
+	 			<img id="LnkBr1image1gb0imageimage" alt="" src="{{ asset('img') }}/facebook-black-social-button-circle.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
 	 	</a>
 		<a class="wel" href="{{ App\Texts::printText(4) }}">
-			 <img id="LnkBr1image1gb0imageimage" alt="" src="{{ URL::to('img') }}/twitter-social-logotype.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
+			 <img id="LnkBr1image1gb0imageimage" alt="" src="{{ asset('img') }}/twitter-social-logotype.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
 	 </a>
 	 <a class="wel" href="{{ App\Texts::printText(3) }}">
-			<img id="LnkBr1image1gb0imageimage" alt="" src="{{ URL::to('img') }}/gmail.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
+			<img id="LnkBr1image1gb0imageimage" alt="" src="{{ asset('img') }}/gmail.svg" style="width:19px;height:19px;object-fit:cover;margin:auto 15px;">
 	</a>
 	 </div>
  </div>

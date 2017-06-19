@@ -24,13 +24,6 @@
                                                                 </label>
                                                                 <input id="post_title" type="text" class="form-control" name="post_title" placeholder="Tên bài viết" onkeyup= "locdau('post_title','post_symbol') " value="{{ $products[0]->name }}">
                                                             </div>
-
-                                                             <div class="col-md-6 top15">
-                                                                <label class="caption">
-                                                                        Địa chỉ
-                                                                </label>
-                                                                <input id="" type="text" class="form-control" name="address"  value="{{ $products[0]->address }}">
-                                                            </div>
                                                              <div class="col-md-6 top15">
                                                                 <label class="caption">
                                                                     Mô tả ngắn
